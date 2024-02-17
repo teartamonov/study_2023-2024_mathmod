@@ -128,5 +128,3 @@ author: "Артамонов Тимофей Евгеньевич"
 - Лабораторная работа № 2
 - [https://ru.wikipedia.org/wiki/Кривая_погони](https://ru.wikipedia.org/wiki/%D0%9A%D1%80%D0%B8%D0%B2%D0%B0%D1%8F_%D0%BF%D0%BE%D0%B3%D0%BE%D0%BD%D0%B8)
 - [Inspiration](https://youtu.be/7OYFay9Bel4)
-# CC
-::: {#refs} :::
