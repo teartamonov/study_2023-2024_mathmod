@@ -154,40 +154,40 @@ Q(t) = 2cos(t) - постоянны и непрерывны соответств
 
 ##Переписали код из примера лабораторной работы на язык Julia и посмотрели на результат работы программы. (рис. [-@fig:001])
 
-![Julia Plot 1](image/1.0.png){ #fig:001 width=70% }
+![Julia Plot 1](image/1.0.PNG){ #fig:001 width=70% }
 
 ##Сделали то же самое для языка OpenModelica. (рис. [-@fig:002])
 
-![OM Plot 1](image/1.11.png){ #fig:002 width=70% }
+![OM Plot 1](image/1.11.PNG){ #fig:002 width=70% }
 
 ##Подставили свои данные для случая с регулярными войсками для Julia. (рис. [-@fig:003])
 
-![Julia code 1](image/case1.png){ #fig:003 width=70% }
+![Julia code 1](image/case1.PNG){ #fig:003 width=70% }
 
 ##Нарисовали график для первого случая. (рис. [-@fig:004])
 
-![Julia Plot 2](image/1.1.png){ #fig:004 width=70% }
+![Julia Plot 2](image/1.1.PNG){ #fig:004 width=70% }
 
 ##Подставили свои значения для первого случая в OMEditб, в настройках модели задали промежуток и построили график. (рис. [-@fig:005])
 
-![OM Plot 2](image/1.3.png){ #fig:005 width=70% }
+![OM Plot 2](image/1.3.PNG){ #fig:005 width=70% }
 
 ##Подставили значения для второго случая и изменили функцию в Julia. (рис. [-@fig:006])
 
-![Julia code 2](image/case2.png){ #fig:006 width=70% }
+![Julia code 2](image/case2.PNG){ #fig:006 width=70% }
 
 ##Построили график и приблизили так, чтобы хорошо было видно изменение функции, понадобилось приблизить до интервала (0, 0.0001). (рис. [-@fig:007])
 Видно что функция немного негладкая.
 
-![Julia Plot 3](image/1.2.png){ #fig:007 width=70% }
+![Julia Plot 3](image/1.2.PNG){ #fig:007 width=70% }
 
 ##Сделаем то же самое в OpenModelica. (рис. [-@fig:008])
 
-![OMEdit 1]((image/1.4.png)){ #fig:008 width=70% }
+![OMEdit 1](image/1.4.PNG){ #fig:008 width=70% }
 
 ##Посмотрим на график, пришлось сделать разбиение на 500 отрезков интервала (0, 0.001). (рис. [-@fig:009])
 
-![OM Plot 3]((image/1.5.png)){ #fig:009 width=70% }
+![OM Plot 3](image/1.5.PNG){ #fig:009 width=70% }
 
 # Выводы
 
