@@ -212,5 +212,6 @@ Q(t) = 2cos(t) - постоянны и непрерывны соответств
 - Мой разум
 - Моё сознание
 - Лабораторная работа № 3
-- [https://ru.wikipedia.org/wiki/Кривая_погони](https://ru.wikipedia.org/wiki/%D0%9A%D1%80%D0%B8%D0%B2%D0%B0%D1%8F_%D0%BF%D0%BE%D0%B3%D0%BE%D0%BD%D0%B8)
+- https://cyberleninka.ru/article/n/modeli-dvustoronnih-boevyh-deystviy-mnogochislennyh-gruppirovok/viewer
+В.Ю. Чуев, И.В. Дубограй Модели двухсторонних боевых действий многочисленных группировок
 - [Inspiration](https://youtu.be/7OYFay9Bel4)
