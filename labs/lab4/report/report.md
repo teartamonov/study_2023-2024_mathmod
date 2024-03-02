@@ -160,6 +160,7 @@ $$
 # Выполнение лабораторной работы
 
 Написали код на Julia:
+```julia
 
 using DifferentialEquations, Plots, OrdinaryDiffEq
 
@@ -205,9 +206,10 @@ prob3 = ODEProblem(osci_w_force, x0, tspan, a2)
 sol3 = solve(prob3, dtmax = 0.05)
 #plot(sol3) # График колебаний
 plot(sol3, vars = (2, 1)) #Фазовый портрет
+```
 
 Записали 3 случая на языке OpenModelica 
-
+```
 model lab4
 
 Real x(start = 0.6);
@@ -222,8 +224,8 @@ equation
   der(y) = -omega*x - gamma*y;
 
 end lab4;
-
-
+```
+```
 model lab4
 
 Real x(start = 0.6);
@@ -238,8 +240,8 @@ equation
   der(y) = -omega*x - gamma*y;
 
 end lab4;
-
-
+```
+```
 model lab4
 
 Real x(start = 0.6);
@@ -256,7 +258,7 @@ equation
   p = 8.7*sin(2*time);
   
 end lab4;
-
+```
 и получили следующие результаты.
 
 ##Построили график решения осциллятора без затуханий и внешней силы на Julia. (рис. [-@fig:001])
