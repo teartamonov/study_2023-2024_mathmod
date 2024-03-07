@@ -42,7 +42,7 @@ header-includes:
 :::
 ::: {.column width="30%"}
 
-![](./image/ava.jpg)
+![](image/ava.jpg)
 
 :::
 ::::::::::::::
