@@ -170,11 +170,3 @@ Capture-recapture дано целому классу методов, испол�
 2. Polya urn. Definiton, examples. [Электронный ресурс]. 2024. URL: https://www.statisticshowto.com/polya-urn/.
 3. Flajolet P., Dumas P., Puyhaubert V. Some exactly solvable models of urnprocess theory. DMTCS,2006.118 с.
 4. Johnson N.L., Kotz S. Urn Models and their application. John Wiley &Sons,Inc.,1977.402 с.
-
-
-## Список литературы
-
-1. Понтрягин Л.С. Дифференциальные уравнения и их приложения. Наука, 1988. 207 с.
-2. Калиткин Н.Н. Численные методы. Наука, 1978. 512 с.
-3. GNU Octave Documentation [Электронный ресурс]. Free Software Foundation, 2023. URL: https://docs.octave.org/v4.2.0/Matlab_002dcompatible-solvers.html.
-4. Julia Documentation [Электронный ресурс]. JuliaLang.org contributors, 2023. URL: https://docs.sciml.ai/DiffEqDocs/stable/.
