@@ -1,8 +1,8 @@
 ---
 ## Front matter
 lang: ru-RU
-title: Доклад
-subtitle: Модели с урнами
+title: Лабораторная работа № 5
+subtitle: Модель хищник-жертва
 author:
   - Артамонов Т. Е.
 institute:
