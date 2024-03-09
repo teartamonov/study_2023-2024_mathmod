@@ -89,7 +89,7 @@ header-includes:
 5. Скорость роста численности жертв уменьшается пропорционально численности хищников
 
 $$
-\dfrac{dx}{dt} = ax(t) - bx(t)y(t),\\
+\dfrac{dx}{dt} = ax(t) - bx(t)y(t),\line
 \dfrac{dy}{dt} = -cy(t) + dx(t)y(t)
 $$
 
