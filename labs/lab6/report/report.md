@@ -210,24 +210,24 @@ end lab6;
 
 Построили график изменения групп S, I, R когда I(0) <= I* на Julia. (рис. [-@fig:001])
 
-![Julia Plot 1](image/Julia1.png){#fig:001 width=70%}
+![Julia Plot 1](image/Julia1.PNG){#fig:001 width=70%}
 
 Построили график на OpenModelica, графики одинаковые (рис. [-@fig:002])
 
-![OM Plot 1](image/OM2.png){#fig:002 width=70%}
+![OM Plot 1](image/OM2.PNG){#fig:002 width=70%}
 
 Можно построить отдельно I и R, чтобы лучше понять, что происходит. (рис. [-@fig:003])
 
-![OM Plot 2](image/OM1.png){#fig:003 width=70%}
+![OM Plot 2](image/OM1.PNG){#fig:003 width=70%}
 
 Построили график изменения групп S, I, R когда I(0) > I* на Julia. (рис. [-@fig:004])
 Видно, что постепенно все люди заболевают, впоследствие приобретая иммунитет.
 
-![Julia Plot 2](image/Julia2.png){#fig:004 width=70%}
+![Julia Plot 2](image/Julia2.PNG){#fig:004 width=70%}
 
 Построили такой же график в OpenModelica (рис. [-@fig:005])
 
-![OM Plot 3](image/OM3.png){#fig:005 width=70%}
+![OM Plot 3](image/OM3.PNG){#fig:005 width=70%}
 
 
 # Выводы
