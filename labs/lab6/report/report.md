@@ -95,7 +95,7 @@ $$
 \frac{{dS}{dt}} = 
 \begin{cases}
 - \alpha S , если $I(t) > I* \\
-0 , если $I(t) <= I*
+0 , если I(t) <= I*
 \end{cases}
 $$
 
