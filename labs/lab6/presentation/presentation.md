@@ -71,8 +71,8 @@ header-includes:
 $$
 \frac{dS}{dt} = 
 \begin{cases}
--\alpha S \textrm{, если  }I(t) > I* \\
-0 \textrm{, если  } I(t) <= I*
+-\alpha S \textrm{, если  }I(t) > I^* \\
+0 \textrm{, если  } I(t) <= I^*
 \end{cases}
 $$
 
@@ -81,8 +81,8 @@ I(t) меняется по следующему закону:
 $$
 \frac{dI}{dt} = 
 \begin{cases}
-\alpha S - \beta I \textrm{, если  }I(t) > I* \\
--\beta I \textrm{, если  } I(t) <= I*
+\alpha S - \beta I \textrm{, если  }I(t) > I^* \\
+-\beta I \textrm{, если  } I(t) <= I^*
 \end{cases}
 $$
 
