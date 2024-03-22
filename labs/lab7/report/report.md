@@ -201,7 +201,7 @@ end lab7;
 ```
 Случай 3
 ```
-model lab3
+model lab7
 
 parameter Real a = 0.74;
 parameter Real b = 0.000074;
@@ -217,7 +217,7 @@ equation
   p = sin(time);
   q = cos(time);
   
-end lab3;
+end lab7;
 ```
 
 
