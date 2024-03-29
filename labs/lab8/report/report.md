@@ -97,7 +97,7 @@ header-includes:
 Тогда
 
 $$
-\frac{dM1}{dt} = M_1 - \frac{b}{c_1} M_1 M_2 - \frac{a_1}{c_1} M_1^2 \\
+\frac{dM1}{dt} = M_1 - \frac{b}{c_1} M_1 M_2 - \frac{a_1}{c_1} M_1^2 \newline
 \frac{dM2}{dt} = \frac{c_2}{c_1} M_2 - \frac{b}{c_1} M_1 M_2 - \frac{a_2}{c_1} M_2^2
 $$
 
