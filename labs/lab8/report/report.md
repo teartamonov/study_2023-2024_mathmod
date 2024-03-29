@@ -258,13 +258,15 @@ end lab8;
 
 Построили график на OpenModelica, графики одинаковые (рис. [-@fig:002])
 
-![OM Plot 1](image/OM1.PNG){#fig:002 width=70%}
+![OM PLot 1](image/OM1.PNG){#fig:003 width=70%}
 
 Построили график изменения оборотных средств двух фирм для случая 2 на Julia. (рис. [-@fig:003])
 
 ![Julia Plot 2](image/julia2.PNG){#fig:003 width=70%}
 
 Построили такой же график в OpenModelica. Графики совпадают. (рис. [-@fig:004])
+
+![OM PLot 2](image/OM2.PNG){#fig:003 width=70%}
 
 # Выводы
 
