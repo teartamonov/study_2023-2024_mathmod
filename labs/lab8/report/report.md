@@ -263,7 +263,7 @@ end lab8;
 
 Построили график изменения оборотных средств двух фирм для случая 2 на Julia. (рис. [-@fig:003])
 
-![Julia Plot 2](image/julia2.PNG){#fig:003 width=70%}
+![Julia Plot 2](image/julia3.PNG){#fig:003 width=70%}
 
 Построили такой же график в OpenModelica. Графики совпадают. (рис. [-@fig:004])
 
