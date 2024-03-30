@@ -186,7 +186,7 @@ sol1 = solve(prob1, Tsit5(), dtmax = 0.05)
 
 #Задание проблемы и решение для случая 2
 prob2 = ODEProblem(competition2, [M_01, M_02], tspan, p)
-sol2 = solve(prob1, Tsit5(), dtmax = 0.05)
+sol2 = solve(prob2, Tsit5(), dtmax = 0.05)
 
 #Графики
 #plot(sol1, title = "Случай 1")
