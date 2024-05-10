@@ -7,7 +7,7 @@ author:
   - Артамонов Т. Е.
 institute:
   - Российский университет дружбы народов, Москва, Россия
-date: 4 мая 2024
+date: 10 мая 2024
 
 ## i18n babel
 babel-lang: russian
