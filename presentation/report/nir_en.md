@@ -66,32 +66,20 @@ header-includes:
   - \floatplacement{figure}{H} # keep figures where there are in the text
 ---
 
+
 # Introduction
 
-## The purpose of the work
-
-Learn how to use models for NER, train them, fine-tune them, and preprocess data for them.
-
-## Tasks
-
-- Research the NER task
-- Explore data preprocessing methods
-- Explore the methods of training your own model
-- Explore methods of training model using the transformers library
-- Explore methods to fine-tune your model
-- Learn to use fine-tuned models
-
-## Motivatiom
+## Motivation and goals of the work
 
 Text analysis is quite a labor-intensive task, especially nowadays when it can involve entire databases with hundreds of thousands of lines of text. 
 Extracting information from such text can take a considerable amount of time and effort from individuals involved in the task. 
 Yet, the task of extracting information from text and analyzing it is becoming increasingly important for decision-making in various fields, including business and equally important areas like medicine.
 To tackle such tasks, Natural Language Processing (NLP) technologies are employed. One of the key tasks in NLP is Named Entity Recognition (NER). 
-Named Entity Recognition is the task of identifying and classifying named entities from text. The main entities include people’s names, geographical and political locations, and organizations. This approach allows for the automatic extraction of important information from unstructured text, which can then be used for various purposes, such as database creation or automation of various text-related processes.
+Named Entity Recognition is the task of identifying and classifying named entities from text. The main entities include people’s names, geographical and political locations, and organizations. This approach allows for the automatic extraction of important information from unstructured text, which can then be used for various purposes, such as database creation or automation of various text-related processes.
 Neural networks are the primary tool for solving the named entity recognition task. These networks are pre-trained on large volumes of data and are capable of accurately predicting the correct entity tag.
 The goal of this work is to learn how to utilize such models, train and fine-tune pre-trained models, and also explore text vectorization methods.
 
-# Methods to handle NER
+# Methods and steps to solve NER task
 
 ## Data preprocessing 
 
@@ -134,7 +122,7 @@ The rest is left to the discretion of the developer; often, to prevent overtrain
 Also, to prevent overfitting, because this is the biggest problem in machine learning, it is better to use a tool such as callback, which, if the model’s performance consistently decreases during training, will automatically stop the model’s training. 
 Everything else, namely: the number of epochs, the initial learning coefficient, the optimizer and the batch size - this is what you need to experiment with and select yourself. The model can then be compiled and trained on your data.
 
-## Using transormers library
+## Using transformers library
 
 All of the above has already been implemented in such large libraries as tensorflow and pytorch, but there is also the transformers library, which appeared not so long ago. Using it, you can use already pretrained models that were previously trained on a large amount of data and retrain it on a specific task. By knowing more than its strict domain of application, the model will be robust to outliers and will be able to produce the correct answer even when given unusual inputs. You can even use fine-tuned models from well-known companies that are publicly available and have excellent performance.
 
@@ -153,3 +141,4 @@ Also using pipeline() you can use a ready-made trained model for the task you ne
 # Conclusion
 
 The work examined one of the tasks of Natural Language Proccessing, namely Named Entity Recognition, which is one of the most relevant in our time. Methods for solving this problem were also considered using various tools, in particular data preprocessing, model training, additional training of the model, and the use of ready-made models
+
