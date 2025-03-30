@@ -1,21 +1,21 @@
 ---
 ## Front matter
-lang: ru-RU
+lang: en-GB
 title: Доклад
-subtitle: Модели с урнами
+subtitle: X-ray Image Analysis Using Machine Learning Methods
 author:
-  - Артамонов Т. Е.
+  - Artamomov T. E.
 institute:
-  - Российский университет дружбы народов, Москва, Россия
-date: 8 августа 2024
+  - Peoples’ Friendship University of Russia named after Patrice Lumumba, Moscow, Russia
+date: April 7th 2024
 
 ## i18n babel
-babel-lang: russian
+babel-lang: english
 babel-otherlangs: english
 
 ## Formatting pdf
 toc: false
-toc-title: Содержание
+toc-title: Contents
 slide_level: 2
 aspectratio: 169
 section-titles: true
@@ -27,17 +27,18 @@ header-includes:
  - '\makeatother'
 ---
 
-# Информация
+# Information
 
-## Докладчик
+## Speaker
 
 :::::::::::::: {.columns align=center}
 ::: {.column width="70%"}
 
-  * Артамонов Тимофей Евгеньевич
-  * студент группы НКНбд-01-21
-  * Российский университет дружбы народов
+  * Artamonov Timofey Evgenievich
+  * student of group NKNbd-01-21
+  * Peoples’ Friendship University of Russia named after Patrice Lumumba
   * <https://github.com/teartamonov>
+  * meiwenk46@gmail.com
 
 :::
 ::: {.column width="30%"}
@@ -47,126 +48,60 @@ header-includes:
 :::
 ::::::::::::::
 
-# Введение
+## Introduction
 
-## Цель работы
+Many diseases can be detected in the chest area using X-ray images. However, a correct diagnosis requires a lot of experience from the specialist who makes it. Nevertheless, even this does not guarantee a correct diagnosis, because the images may be, for example, of poor quality, which will make it difficult to make a correct diagnosis. In such cases and in general, Artificial Intelligence (AI), namely a model for Computer Vision (CV), can help to optimize and automate the work. 
 
-Исследовать модели с урнами и рассмотреть области их применения.
+## Purpose of work
+
+To Fine-tune pre-trained machine learning models on chest X-rays to make them resistant to the noise that is characteristic of images in this area.
 
 ## Задачи
 
-- Рассмотреть базовую модель с урнами
-- Исследовать разновидности моделей с урнами
-- Рассмотреть область их применения
+- To preprocess the dataset correctly
+- To fine-tune multiple models with different architectures
+- To analyze the results and choose the best model
 
-# Определение
+## Related Work
 
-## Модель урны
+Classification and Segmentation are the two biggest tasks in CV and both of these approaches are used to solve problems in medicine. It is often the image segmentation approach that is used for this type of task, but markup for such a dataset is a rather complex process that requires an experienced specialist. Many articles focus on a particular area of the human body, and this article is no exception. Other studies use only one model, while this article is exploratory and observational in nature, which shows a comparison of different models with different architectures to find out what is best suited for such a specific task as classifying X-ray images.
 
-Модель урны — это либо набор вероятностей, описывающих события в задаче с урной, 
-либо распределение вероятностей или семейство таких распределений случайных величин, 
-связанных с задачами с урной. 
+##  Pre-training and Fine-tuning
 
-# Разновидности
+All models were pre-trained on such large datasets as ImageNet-1K with 1000 classes, so models which have seen a huge number of very different images will be more stable during fine-tuning whennoise appears in both training and test data after training. Fine-tuning was performed using Pytorch with the freezing of model layers and changing the last layer to Dense with the number of neurons equal to the number of classes. The Sigmoid activation function was used separately for model validation and metric verification, because The loss function was used by Binary Cross-Entropy with Logits, which, as the name suggests, takes logits as input, rather than probabilities, which are obtained after applying the Sigmoid activation function.
 
-## Базовая модель (Модель без возвращения)
-В этой базовой модели урны в теории вероятностей урна содержит n белых и m черных шаров, 
-хорошо перемешанных друг с другом. Из урны случайным образом вынимают один шар и наблюдают за его цветом. Процесс выбора повторяется.
-Такую модель называют извлечением без замены. Такая модель будет зависеть от истории, т.к. на вероятности будут оказывать влияние предыдущие эксперименты.
+## Datasets
 
-## Базовая модель. Формула
-Для модели без возвращения вероятность вытянуть $k$ шаров, из урны с $m$ черными и $n$ белыми шарами, из которых $l$ черных шаров можно выразить следующей формулой:
-$$
-P(l) = \frac{\binom{l}{m} \binom{k-l}{n}}{\binom{k}{m+n}}​
-$$
-Где:
-$P(l)$ - вероятность вытянуть l черных шаров
-$\binom{k}{n} = \frac{n!}{k!(n-k)!}$ - количество способов выбрать k элементов из n элементов (сочетание)
+This study used one chest X-Ray images dataset on the NIH Chest X-ray Dataset that was compiled of 112,120 X-ray images with disease labels from 30,805 unique patients. The models were trained in different ways in different numbers of classes. There was a very pronounced data imbalance in the specified dataset. As a result of the experiments, only four classes of diseases were left to improve the quality of the models. From the dataset, only Image Index image names and found diseases were used - FindingLabels. The images were compressed to a size of 224x224 pixels to meet the requirements of the ResNet model. The classes Atelectasis, Infiltration, Effusion, and No-finding were chosen for training. 
 
-## Модель Бернулли
-Модель Бернулли описывает случайный эксперимент с двумя возможными исходами: 
-успехом и неудачей. Пусть успех - черный шар, неудача - белый.
-Обозначим вероятность успеха как $p$ и вероятность неудачи как $q$. При этом должно выполняться условие $p+q=1$.
-В данной модели, после того, как шар достают, его возвращают обратно в урну, т.к. эксперимент Бернулли - независимый эксперимент. 
-Таким образом независимо от количества испытаний, эксперимент не меняется, т.е. вероятность не зависит от истории.
+## Models
 
-## Модель Бернулли. Формула
-Формула для расчёта вероятности того, что из урны с $m$ черными шарами и $n$ белыми шарами будет вытянуто $k$ шаров, из котрых $l$ - черные для данной модели выглядит следующим образом:
-$$
-P(l) = \binom{l}{k} * p^l * (1 - p)^{k-l}
-$$
-Где:
-$P(l)$ - вероятность того, что будет вытянуто l черных шаров
-$p$ - вероятность вытащить черный шар
+Several models were selected for the study, including: Resnet-152, VGG-16, EfficientNet, YOLO and ViT, but due to the limitations of computing power and the questionable practical benefits of using outdated models, this list was shortened. This article discusses such pre-trainedmodels as ResNet-152, YOLO and ViT. The parameters were selected separately for each model. Since the pre-trained architecture of the YOLO model cannot be changed, it was trained with its own loss function and its own optimizer.
 
-## Модель Поля. The reach get reacher
+## Training parameters
 
-В статистике модель урны Поля, названная в честь Джорджа Поля, представляет собой модель, в которой 
-после того, как шар достается, он возвращается в урну, и ещё добавляется шар такого же цвета. Этот процесс повторяется.
-Можно заметить, что если, например, белых шаров больше чем чёрных, то с большей вероятностью будет добавлен белый шар. 
-То есть эта урна зависит от истории и сходится. 
+Experiments were conducted with training completely frozen and completely unfrozen layers of the ResNet-152 model, and as a result, the quality metrics and the loss function indicator did not differ significantly between these two variants. The models showed better results in the form of metrics when using a higher learning rate, because it still decreases during the learning process. The training was conducted on an Nvidia Tesla V100 with 32GB of memory. Pytorch Dataloader with batch_size=128 was used for training. For ResNet-152 and ViT, the BCEWithLogitsLoss loss function with the pos_weight parameter was used to balance class weights. This parameter is a list of weights for each class. These weights are calculated as the ratio of negative examples to positive ones. Thus, they were trained: 
+- Resnet-152 with optimizer AdaGrad(lr=0.001)
+- ViT with optimizer Adam(lr=0.001)
+- YOLO with optimizer SGD(lr=0.01)
 
-## Модель Поля. Снежный ком
-Даже если мы смоделируем ситуацию, где в урне находится одинаковое количество шаров черного и белого цвета, 
-количество шаров одного цвета будет сильно больше шаров другого цвета. Допустим, вы начинаете с равным количеством шаров (5 белых, 5 черных). 
-Если после первого испытания будет выбран белый шар, в урне окажется 6 белых и 5 черных шаров. Это автоматически создает неравенство, 
-при котором в следующем испытании с большей вероятностью будет выбран белый шар, нежели черный. Шансы теперь составляют 6/11, 
-что будет выбран белый шар, и 5/11, что вы выберете черный. Этот фактор и может стать снежным комом. 
+## Results
 
-## График изменения количества шаров в урне Поля при m = 5, n = 5.  (рис. [-@fig:001])
+As a result of training three models on the same data set, the final metrics on the test data turned out to be quite different. Classical metrics for the classification problem were chosen: Precision, Recall and F1-Score. High precision means fewer false-positives, high recall means fewer false-negatives ,the F1-Score is highest when precision and recall are balanced. 
+The best metrics on the validation dataset in [Table1](#Table1).
 
-![График урны Поля](image/julia_polya1.PNG){ #fig:001 width=70% }
+<a name="Table1"></a>
+**Table 1. The best metrics of models on the validation dataset**  
+| Model   | Precision | Recall | F1Score |
+|-----------|----------|---------|---------|
+| ResNet-152 | 0.55 | 0.42 | 0.48 |
+| ViT | 0.58 | 0.70 | 0.48 |
+| YOLO | 0.22 | 0.22 | 0.11 |
 
-## Модель баланса
-Модель баланса или же модель плохой выборной компании - модель которую изучал Фридман, и ее можно рассматривать как
-моделирование предвыборной кампании, в которой кандидаты настолько плохи, что люди, которые их слушают,
-решают голосовать за противоположного кандидата. Данная урна, в отличие от урны Поля, стремится сохранить баланс черных и белых шаров.
-В данной модели после выемки шара в урну кладётся шар противоположного цвета. Модель сходится к равновесию.
+## Discussion
 
-## График изменения количества шаров в урне Фридмана при m = 10, n = 5. 
-Среднее значение 7.5, поэтому количество черных и белых шаров колеблется возле этого значения. (рис. [-@fig:002])
+The obvious winner of these three models is ViT. However, it can be seen that, in general, the metrics of all models for all classes are quite low. The YOLO model has the lowest performance, most likely due to the fact that the model's architecture assumes a standard classification rather than a multi-label classification. Despite this, we should not exclude the fact that YOLO models specialize in image segmentation rather than classification. ViT's small victory over ResNet can be explained by the fact that the model is newer, and also, like a transformer, has self-attention layers, which can help the model find signs of diseases in images more effectively, since X-ray images are a rather specific type of images for models who were trained on ImageNet, where classes are more familiar. objects. This can also explain the generally low metrics of all models. However, we should also not forget that the task of multi-label classification was solved, which also introduces additional complexity.
 
-![График урны Фридмана](image/julia_balance.PNG){ #fig:002 width=70% }
+## Conclusion and future work
 
-# Области применения
-
-## Теория вероятности
-Модели с урнами - это мощный инструмент в теории вероятностей, используемый для моделирования случайных событий.
-Каждая из упомянутых моделей используется в теории вероятностей для анализа случайных процессов и событий а так же вероятностных распределений
-из многих областей нашей жизни и помогает решать реальные задачи.
-
-## Генетика
-В генетике модели с урнами могут быть использованы для описания процессов мутации и передачи генов. 
-Например, урна с генами различных аллелей может быть использована для моделирования генетического разнообразия в популяции.
-Модель урны схожая с моделью Поля используется для моделирования генетического дрейфа в теоретической популяционной генетике. 
-
-## Экономика
-В экономике модели с урнами могут быть применены для анализа случайных процессов в экономике, 
-таких как изменения цен, вариации спроса и предложения, а также для моделирования рисков и случайных событий в финансовых рынках.
-
-## Обучающие процессы 1/2
-Эти модели являются продолжением процесса Поля. Один из вариантов, так называемая стохастическая модель обучения 
-с двумя вариантами ответов, предложенная Одли и Джонкхиром (1956). Мы рассматриваем последовательность испытаний, 
-в каждом из которых испытуемый должен отреагировать одним из двух возможных способов. 
-
-## Обучающие процессы 2/2
-Один ответ "вознаграждается" — положительная оценка — каждый раз, когда он совершается. 
-Другой "наказаывается" — негативная оценка. Таким образом, (i + 1)-й ответ субъекта, скорее всего, будет зависеть от каждого из первых i ответов.
-Используя эту модель, Одли и Джонкхир получили условное распределение вероятности успеха в (n + 1)-м испытании, учитывая результаты предыдущих n испытаний. 
-
-## Биология
-Capture-recapture дано целому классу методов, используемых для оценки размеров естественных популяций. 
-Многие из них происходят из работ Шнабеля(1938) и Чапмана(1952), в которых обсуждается оценка численности рыбы f в озере. 
-Предложенный метод состоял в разделении рыбы на меченую и немеченую.
-
-# Выводы
-
-В работе были исследованы разновидности моделей с урнами, а так же было рассмотренно их применение в различных областях. Таким образом, 
-хотя модель с урнами - это и простой мысленный эксперимент, различные её виды внесли вклад в развитие многих областей нашей жизни и используются и по сей день.
-
-## Список литературы
-
-1. Polya urn porblem [Электронный ресурс]. Free Software Foundation, 2024. URL: https://en.wikipedia.org/wiki/Urn_problem.
-2. Polya urn. Definiton, examples. [Электронный ресурс]. 2024. URL: https://www.statisticshowto.com/polya-urn/.
-3. Flajolet P., Dumas P., Puyhaubert V. Some exactly solvable models of urnprocess theory. DMTCS,2006.118 с.
-4. Johnson N.L., Kotz S. Urn Models and their application. John Wiley &Sons,Inc.,1977.402 с.
+In this article, several pre-trained models with different architectures for recognizing chest diseases from X-ray diseases were investigated. As a result of the training, the ViT transformer model showed the best results, while YOLO showed the worst results among the models. And although the overall metrics turned out to be low, the ViT model finds patients without diseases quite well with a high Recall for diseases, on average 75%, which is a good indicator, because it means that healthy people are considered sick more often than healthy patients, therefore, the model will miss fewer patients with diseases, which would reduce mortality if only the models were measured by such a metric. In the following works, research will be conducted to improve the performance of models and apply new learning methods such as segmentation.
