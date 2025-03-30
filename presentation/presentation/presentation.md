@@ -95,7 +95,7 @@ The best metrics on the validation dataset in [Table1](#Table1).
 | Model   | Precision | Recall | F1Score |
 |-----------|----------|---------|---------|
 | ResNet-152 | 0.55 | 0.42 | 0.48 |
-| ViT | 0.58 | 0.70 | 0.48 |
+| ViT | 0.58 | 0.70 | 0.58 |
 | YOLO | 0.22 | 0.22 | 0.11 |
 
 ## Discussion
